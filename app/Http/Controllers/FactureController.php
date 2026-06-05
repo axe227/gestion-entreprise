@@ -86,7 +86,7 @@ class FactureController extends Controller
                       ->findOrFail($id);
  
     // ✅ URL Angular Cloudflare pour le QR code
-   $qrData = 'https://thesis-foot-overcome-download.trycloudflare.com/verify/'. $facture->id;
+   $qrData = 'https://trials-trading-counted-precision.trycloudflare.com/verify/'. $facture->id;
  
     $qr     = \Endroid\QrCode\QrCode::create($qrData)->setSize(150);
     $writer = new \Endroid\QrCode\Writer\PngWriter();
