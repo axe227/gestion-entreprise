@@ -13,12 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // ✅ Retire le CORS natif
-        $middleware->remove(\Illuminate\Http\Middleware\HandleCors::class);
-
-        // ✅ Ajoute CORS sur TOUT (web + api)
-        $middleware->prepend(\App\Http\Middleware\HandleCors::class);
-    })
+    $middleware->prepend(\Illuminate\Http\Middleware\HandleCors::class);
+})
     ->withExceptions(function ($exceptions) {
         $exceptions->render(function (\Illuminate\Auth\AuthenticationException $e, $request) {
             return response()->json(['message' => 'Non authentifié'], 401);

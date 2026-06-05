@@ -6,16 +6,9 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://localhost:4200',
-        'http://localhost:3000',
-        'https://offers-sampling-stable-sunrise.trycloudflare.com',
-    ],
+    'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [
-        '#^https://.*\.trycloudflare\.com$#',
-        '#^http://.*\.trycloudflare\.com$#',
-    ],
+    'allowed_origins_patterns' => [],
 
     'allowed_headers' => ['*'],
 
@@ -23,5 +16,5 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 ];
